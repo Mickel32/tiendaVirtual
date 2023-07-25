@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=si , initial-scale=1.0, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+  <title th:text="${producto.nombre}">Home</title>
+
+</head>
+<body>
+    <div th:insert="~{/web/template_web.html::menu}">
+    </div>
+    <form th:action="@{/web/cart}" method="POST" class="contenedor_produ">
+      <input type="hidden" th:value="${producto.id}" name="id">
+      <div class="imagen_produ">
+        <img class="image_produ" th:src="@{/images/{img}(img=${producto.imagen})}" alt="">
+        <div class="zoom">
+        </div>
+      </div>
+      <div class="detalle_prod">
+        <div class="links">
+          <div class="referencias">
+            <a th:href="@{/web/tienda}">Inicio</a>
+            <p>  > </p>
+            <a href="" th:text="${producto.empresa}"></a>
+          </div>
+          <div class="navegacion">
+            <img th:src="@{/media/leftarrow.svg}" alt="">
+            <img th:src="@{/media/rightarrow.svg}" alt="">
+          </div>
+        </div>
+        <div class="info_prod">
+          <h2 th:text="${producto.nombre}"></h2>
+          <p class="text_precio" th:text="'$'+${producto.precio}"></p>
+          <p class="text_detalle" th:text="${producto.descripcion}"></p>
+        </div>
+        <div class="espec_prod">
+          <p class="titulo_espec">Especificaciones</p>
+          <div class="cont_espec">
+            <h2>TALLA</h2>
+            <p th:text="${producto.talla}"></p>
+          </div>
+          <div class="cont_espec">
+            <h2>CODIGO</h2>
+            <p th:text="${producto.codigo}"></p>
+          </div>
+        </div>
+        <div class="cart">
+          <button type="submit" >Añadir a carrito</button>
+          <a th:href="@{/web/carrito}"><img th:src="@{/media/shoppingcart.svg}" alt=""></a>
+        </div>
+      </div>
+    </form>
+    <div class="recomendacion_prod">
+      <div class="titulo">
+        <h2>TAMBIÉN TE RECOMENDAMOS…</h2>
+      </div>
+        <div class="contenedor_prod">
+          <div class="tarjeta_prod" th:each="producto: ${productosRecom}">
+            <div class="img_producto">
+              <a th:href="@{/web/producto/{id} (id=${producto.id})}"><img th:src="@{/images/{img}(img=${producto.imagen})}" alt=""></a>
+            </div>
+            <div class="producto_prod">
+              <h2 th:text="${producto.nombre}">Nombre Producto</h2>
+            </div>
+            <div class="precio_prod">
+              <p th:text="'$'+${producto.precio}">Precio</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div th:insert="~{/web/template_web.html::footer}">
+    </div>
+
+    <script th:src="@{/vendor/styles.js}"></script>
+</body>
+</html>

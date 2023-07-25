@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=si , initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div th:include="administrador/template_admin.html::menu">
+    </div>
+    <div class="contenedor_productos">
+        <div class="contenido">
+            <a class="boton_crear_prod" th:href="@{/administrador/crearProd}">Crear Producto</a>
+            <h2>Productos</h2>
+            <table class="productos">
+                <thead>
+                    <tr class="encabezado">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Acción</th>
+                        <th scope="col">Acción</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cuerpo" th:each="prod:${productos}">
+                        <td th:text="${prod.nombre}"></td>
+                        <td th:text="${prod.descripcion}"></td>
+                        <td th:text="${prod.precio}"></td>
+                        <td th:text="${prod.categoria}"></td>
+                        <td ><a class="boton_producto edit" th:href="@{/administrador/editarProd/{id} (id=${prod.id})}">Editar</a></td>
+                        <td><a class="boton_producto delete" th:href="@{/administrador/activarProd/{id} (id=${prod.id})}">Activar</a></td>
+                        <td><a class="boton_producto delete" th:href="@{/administrador/inactivarProd/{id} (id=${prod.id})}">Inactivar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div th:insert="~{/web/template_web.html::footer}">
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{css/styles.css}">
+</head>
+<body>
+    <main>
+        <div th:include="administrador/template_admin.html::menu">
+        </div>
+        <div class="contenedor_inicio">
+            <div class="contenido_inicio">
+                <div class="icono_menu go_product">
+                    <a th:href="@{/administrador/productos}"><img th:src="@{/media/productos_bolsa.jpg}" alt="bolsa de productos"></a>
+                    <a th:href="@{/administrador/productos}">Productos</a>
+                </div>
+                <div class="icono_menu go_user">
+                    <a th:href="@{/administrador/usuarios}"><img th:src="@{/media/usuarios.jpg}" alt="bolsa de productos"></a>
+                    <a th:href="@{/administrador/usuarios}">Usuarios</a>
+                </div>
+                <div class="icono_menu log_out">
+                    <a th:href="@{/web}"><img th:src="@{/media/cerrar_sesion.jpg}" alt="bolsa de productos"></a>
+                    <a th:href="@{/web}">Salir</a>
+                </div>
+            </div>
+        </div>
+        <div th:include="administrador/template_admin.html::footer">
+        </div>
+    </main>
+</body>
+</html>

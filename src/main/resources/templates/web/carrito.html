@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=si , initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <title>Carrito</title>
+</head>
+<body>
+    <div th:include="~{/web/template_web.html::menu}">
+    </div>
+    <div class="contenedor_productos">
+        <div class="contenido">
+            <h2>Productos en el carrito</h2>
+                <div class="contenedor_cart">
+                    <table class="productos">
+                    <thead>
+                    <tr class="encabezado">
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="cuerpo" th:each="dorden:${cart}" >
+                        <td th:text="${dorden.nombre}"></td>
+                        <td th:text="${dorden.precio}"></td>
+                        <td><a class="boton_producto delete">Eliminar</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="contenedor_precio">
+                    <h2>SUBTOTAL</h2>
+                    <div class="valor_pago">
+                        <h2>Total</h2>
+                        <p th:text="'$ '+${#numbers.formatDecimal(orden.total, 2,2) }">$10</p>
+                    </div>
+                    <button>Ver Orden</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:insert="~{/web/template_web.html::footer}">
+    </div>
+</body>
+</html>

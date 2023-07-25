@@ -1,0 +1,48 @@
+.contenedor_cart{
+    display: flex;
+    justify-content: space-around;
+}
+
+.contenedor_precio{
+    color: #484F56;
+    font-family: 'Lato', sans-serif;
+    width: 15%;
+}
+
+.contenedor_precio h2{
+    margin-bottom: .5rem;
+}
+
+.contenedor_precio button{
+    font-family: 'Lato', sans-serif;
+    color: #ffffff;
+    background-color: #484F56;
+    width: 100%;
+}
+
+.contenedor_precio button:hover{
+    color: #484F56;
+    background-color: #ffffff;
+}
+
+.valor_pago{
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    border: solid 1px #7A7A7A80;
+    border-radius: .5rem;
+}
+
+.valor_pago h2{
+    margin-top: .7rem;
+    margin-bottom: .7rem;
+    padding-top: 0;
+    font-size: 1rem;
+}
+
+.valor_pago p{
+    margin-top: .7rem;
+    margin-bottom: .7rem;
+    padding-top: 0;
+    font-size: 1rem;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=si , initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+
+    <title>Tienda</title>
+</head>
+<body>
+    <div th:insert="~{web/template_web.html::menu}">
+    </div>
+    <div class="empresas">
+      <a data-id="1" th:href="@{/web/terrestre}">Fuerza Terrestre</a>
+      <a data-id="2" th:href="@{/web/aerea}">Fuerza Aérea</a>
+      <a data-id="3" th:href="@{/web/armada}">Armada</a>
+    </div>
+    <div class="contenedor_tarjeta">
+        <div class="tarjeta" th:each="producto: ${productos}">
+            <div class="image">
+                <a th:href="@{/web/producto/{id} (id=${producto.id})}"><img th:src="@{/images/{img}(img=${producto.imagen})}" alt=""></a>
+            </div>
+            <div class="producto">
+                <h2 th:text="${producto.nombre}"></h2>
+            </div>
+            <div class="precio">
+                <p th:text="'$'+${producto.precio}"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div th:insert="~{web/template_web.html::footer}">
+    </div>
+    <script th:src="@{/vendor/styles.js}"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <main>
+        <div th:include="administrador/template_admin.html::menu">
+        </div>
+        <div class="form_contenedor">
+            <form action="" class="form_product" method="post" th:action="@{/administrador/update}" enctype="multipart/form-data">
+                <input type="hidden" name="id" th:value="${producto.id}">
+
+                <h2>Crear Producto</h2>
+                <div class="contenido_form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" th:value="${producto.nombre}" required>
+                </div>
+                <div class="contenido_form">
+                    <label  for="descripcion" >Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" th:text="${producto.descripcion}" required></textarea>
+                </div>
+                <div class="contenido_form">
+                    <label for="precio" >Precio:</label>
+                    <input id="precio" type="text" name="precio" th:value="${producto.precio}" required>
+                </div>
+                <div class="contenido_form">
+                    <label for="talla" >Talla:</label>
+                    <input id="talla" type="text" name="talla" th:value="${producto.talla}" required>
+                </div>
+                <div class="contenido_form">
+                    <label for="categoria" >Categoría:</label>
+                    <input id="categoria" type="text" name="categoria" th:value="${producto.empresa}" required>
+                </div>
+                <div class="contenido_form">
+                    <label for="empresa" >Empresa:</label>
+                    <input id="empresa" type="text" name="empresa" th:value="${producto.empresa}" required>
+                </div>
+                <div class="contenido_form">
+                    <label for="codigo" >Código:</label>
+                    <input id="codigo" type="text" name="codigo" th:value="${producto.codigo}" required>
+                </div>
+                <div class="contenido_form">
+                    <label>Imagen:</label>
+                    <input type="file" name="img">
+                </div>
+                <div class="contenido_form">
+                    <button type="submit" class="btn_guardar">Guardar</button>
+                </div>
+            </form>
+        </div>
+        <div th:include="administrador/template_admin.html::footer">
+        </div>
+    </main>
+</body>
+</html>

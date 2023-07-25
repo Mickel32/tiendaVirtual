@@ -1,0 +1,29 @@
+<div th:fragment="menu">
+        <nav class="contenedor_menu_adm">
+            <div class="logo">
+                <img src="/../static/media/logo-fame.png" th:src="@{/media/logo-fame.png}" alt="logo">
+            </div>
+            <div class="dropdown">
+                <a class="dropdown_text" th:href="@{/administrador}">Menú</a>
+                <div class="menu_adm">
+                    <ul>
+                        <li class="menuitem"><a th:href="@{/administrador/productos}">Productos</a></li>
+                        <li class="menuitem"><a th:href="@{/administrador/usuarios}">Usuario</a></li>
+                        <li class="menuitem"><a th:href="@{/web}">Salir</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+
+
+    <div th:fragment="footer">
+        <footer class="copyright">
+            <div >
+                <p>Copyright 2023 FAME.EC – Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+

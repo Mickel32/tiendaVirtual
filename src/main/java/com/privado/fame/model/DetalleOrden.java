@@ -1,11 +1,23 @@
 package com.privado.fame.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table (name = "detalles")
 public class DetalleOrden {
+    @Id
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nombre;
     private double cantidad;
     private double precio;
     private double total;
+
+    @OneToOne
+    private Orden ordenes;
+
+    @ManyToOne
+    private Producto productos;
 
     public DetalleOrden (){
 
@@ -57,6 +69,22 @@ public class DetalleOrden {
 
     public void setTotal(double total) {
         this.total = total;
+    }
+
+    public Orden getOrdenes() {
+        return ordenes;
+    }
+
+    public void setOrdenes(Orden ordenes) {
+        this.ordenes = ordenes;
+    }
+
+    public Producto getProductos() {
+        return productos;
+    }
+
+    public void setProductos(Producto productos) {
+        this.productos = productos;
     }
 
     @Override

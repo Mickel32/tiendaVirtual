@@ -1,0 +1,33 @@
+.contenedor_productos{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-top: 3rem;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.productos{
+    align-self: center;
+    width: 75%;
+    border-collapse: collapse;
+}
+
+.cuerpo td {
+    padding-top: .5rem;
+    padding-left: .5rem;
+    border-bottom: solid 1px #7A7A7A26;
+    padding-bottom: .5rem;
+}
+
+.encabezado th{
+    text-align: left;
+    padding: .5rem;
+    border-top: solid 1px #7A7A7A80;
+    border-bottom: solid 2px #7A7A7A80;
+}
+

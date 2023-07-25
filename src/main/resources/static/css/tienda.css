@@ -1,0 +1,71 @@
+.empresas{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.empresas a{
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: #7A7A7A;
+    padding: 1rem;
+    background-color: transparent;
+
+}
+
+.empresas a:hover{
+    background-color: #C88E0B80;
+    color: #494949;
+}
+
+.empresas .activo{
+    background-color: #C88E0B;
+    color: #494949;
+}
+
+.contenedor_tarjeta{
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(313px, 1fr));
+    column-gap: 2rem;
+    padding: 0 8rem;
+    margin-bottom: 5rem;
+}
+
+.image{
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: 392px;
+}
+
+.image img{
+    width: 100%;
+    height: 100%;
+}
+
+.tarjeta{
+    padding-top: .5rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 330px;
+    height: 519px;
+}
+
+.tarjeta h2{
+    font-size: 1.125rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    padding: 0;
+}
+
+.tarjeta p{
+    font-size: .875rem;
+    font-family: "Helvetica", sans-serif;
+    font-weight: 600;
+    color: #7A7A7A;
+    margin-top: 0;
+    padding: 0;
+
+}

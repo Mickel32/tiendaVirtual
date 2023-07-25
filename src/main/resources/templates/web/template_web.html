@@ -1,0 +1,88 @@
+    <div th:fragment="menu">
+        <nav class="contenedor">
+            <div class="logo">
+                <img src="/../static/media/logo-fame.png" th:src="@{/media/logo-fame.png}" alt="logo">
+            </div>
+            <ul class="menu">
+                <li class="menuitem">Inicio</li>
+                <li class="menuitem">Empresa</li>
+                <li class="menuitem">Compras Públicas</li>
+                <li class="menuitem">Noticias</li>
+                <li class="menuitem">Sugerencias</li>
+                <li id="tienda" class="menuitem"><a th:href="@{/web/tienda}">Tienda en línea</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
+    <div th:fragment="footer">
+        <footer class="footer">
+            <section class="suscursales">
+                <div  class="matriz">
+                    <div class="logofooter">
+                        <img src="/../static/media/logofame_vertical.png" th:src="@{/media/logofame_vertical.png}" alt="logo">
+                    </div>
+                    <div class="titulo">
+                        <img src="/../static/media/hogar.png" th:src="@{/media/hogar.png}" alt="ubicación">
+                        <h2>MATRIZ PLANTA</h2>
+                    </div>
+                    <p class="direccion">Av. General Rumiñahui N°3976 y Ambato <br>
+                        Sangolquí junto a la ESPE. <br>
+                        Apartado postal 171103 Sangolquí - Ruminahui - Pichincha
+                    </p>
+                    <div class="info_general tlf">
+                        <img src="/../static/media/llamada-telefonica.png" th:src="@{/media/hogar.png}" alt="teléfono">
+                        <p>+593 2332 052 ext 129</p>
+                    </div>
+                    <div class="info_general whatsapp">
+                        <img src="/../static/media/whatsapp.png" th:src="@{/media/hogar.png}" alt="whatasapp">
+                        <p>+Ventas Generales +593 96 243 007</p>
+                    </div>
+                    <div class="info_general email">
+                        <img src="/../static/media/enviar-correo.png" th:src="@{/media/hogar.png}" alt="email">
+                        <p>servicio_cliente@fame.ec</p>
+                    </div>
+                </div>
+                <div class="puntos_venta">
+                    <div class="quito">
+                        <div class="titulo">
+                            <img src="/../static/media/hogar.png" th:src="@{/media/hogar.png}" alt="ubicación">
+                            <h2>LA RECOLETA</h2>
+                        </div>
+                        <p class="direccion">Calle la Exposición 208 Interiores Ministerio <br>
+                            de Defensa, Quito - Ecuador <br>
+                            La Recolecta 170403
+                        </p>
+                        <div class="info_general tlf">
+                            <img src="/../static/media/llamada-telefonica.png" th:src="@{/media/hogar.png}" alt="teléfono">
+                            <p>+593 2570 376</p>
+                        </div>
+                    </div>
+                    <div class="guayaquil">
+                        <div class="titulo">
+                            <img src="/../static/media/hogar.png" th:src="@{/media/hogar.png}" alt="ubicación">
+                            <h2>BASE NAVAL SUR - GUAYAQUIL</h2>
+                        </div>
+                        <p class="direccion">Calle 25 de Junio S/N. Edificio Digmat piso 2 <br>
+                            (Junto al Hospital Naval de la Base Sur)
+                        </p>
+                        <div class="info_general tlf">
+                            <img src="/../static/media/llamada-telefonica.png" th:src="@{/media/hogar.png}" alt="teléfono">
+                            <p>+593 4391 7251</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="info_adicional">
+                <div class="horario">
+                    <h2>Horarios de atención</h2>
+                    <p>Lunes a viernes de 8h00 a 16h30</p>
+                </div>
+                <div class="importante">
+                    <p><span class="titulo_imp">IMPORTANTE:</span> para contactos con proveedores y <br>
+                        envío de ofertas al siguiente correo compras@fame.ec</p>
+                </div>
+            </section>
+        </footer>
+    </div>
+</body>
